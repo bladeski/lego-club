@@ -43,9 +43,9 @@
     to-fast-properties "^2.0.0"
 
 "@bladeski/countdown-timer@^1.0.0":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@bladeski/countdown-timer/-/countdown-timer-1.0.3.tgz#dd413e161ca2d8700bbf32fe98ac6b5635e57b4b"
-  integrity sha512-XfdodDhQbOr1nVeBYP0muNGsR432zyrqIWUrkc72FpaUxcVp0Aout8y9DXvTt6wvwLHoZn7TH55BeEnuHRL9FA==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@bladeski/countdown-timer/-/countdown-timer-1.1.0.tgz#d63a3389b6238872655151ad7e6b64dc61e6ae20"
+  integrity sha512-L0Y0R2aXthWEPnII5KClt24STPN80bDttg0AyLd2FGmcpqbhItUZaz+lEoiNDBL7TdR36hS6OqUfk4cJc1vZfg==
   dependencies:
     "@swc/helpers" "^0.4.14"
 
