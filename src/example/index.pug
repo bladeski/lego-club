@@ -3,18 +3,7 @@ html(lang="en-GB")
   head
     include templates/head.pug
   main
-    div#Timer.hours.minutes.seconds
-      span#Hours1.hour-value
-      span#Hours2.hour-value
-      span.hour-divider :
-      span#Minutes1.minute-value
-      span#Minutes2.minute-value
-      span.minute-divider :
-      span#Seconds1.second-value
-      span#Seconds2.second-value
-    button#StartStop.timer-stopped.material-symbols-rounded(aria-label="Start/pause the timer" aria-disabled="true" disabled)
-      span.play play_circle
-      span.pause pause_circle
+    countdown-component
     form#Settings(hidden)
       div Countdown Timer Length 
       div.timer-values

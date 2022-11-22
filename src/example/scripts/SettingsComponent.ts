@@ -1,12 +1,16 @@
-import TimerComponent from './TimerComponent';
+import '@bladeski/countdown-timer'
+
+import {CountdownComponent} from '@bladeski/countdown-timer'
+import confetti from 'canvas-confetti';
 
 export default class SettingsComponent {
   private settingsButton: HTMLButtonElement;
   private showSettings = false;
   private form: HTMLFormElement;
   private inputs: HTMLInputElement[] = [];
-  private timer: TimerComponent;
+  private timer?: CountdownComponent;
   private _currentSettings: SettingsModel = defaultSettings;
+  private cycleThemeTimeout?: number;
 
   private get currentSettings() {
     return this._currentSettings;
@@ -37,7 +41,7 @@ export default class SettingsComponent {
     });
 
     const themeColourInput = this.form.querySelector('[name="themeColour"]') as HTMLInputElement;
-    themeColourInput.addEventListener('input', this.setThemeColour.bind(this));
+    themeColourInput.addEventListener('input', this.onUpdateThemeColour.bind(this));
 
     this.form.addEventListener('input', (event: Event) => {
       const updateButton = document.getElementById(
@@ -51,7 +55,35 @@ export default class SettingsComponent {
       }
     });
     this.form.addEventListener('submit', this.onFormSubmit.bind(this));
-    this.timer = new TimerComponent(this.toggleSettings.bind(this));
+    this.timer = document.querySelector('countdown-component') as CountdownComponent;
+
+    this.timer.addEventListener('countdownStart', () => {
+      if (this.cycleThemeTimeout) {
+        clearInterval(this.cycleThemeTimeout);
+        this.cycleThemeTimeout = undefined;
+      }
+
+      if (this.currentSettings.cycleThemeColour) {
+        this.cycleThemeTimeout = setInterval(() => {
+          this.setThemeColour(this.currentSettings.themeColour ? this.currentSettings.themeColour + 1 % 255 : 260);
+        }, 100);
+      }
+    });
+
+    this.timer.addEventListener('countdownStop', () => {
+      if (this.cycleThemeTimeout) {
+        clearInterval(this.cycleThemeTimeout);
+        this.cycleThemeTimeout = undefined;
+      }
+    });
+
+    this.timer.addEventListener('countdownEnd', () => {
+      confetti()?.then(this.timer?.reset);
+    });
+
+    this.timer.addEventListener('countdownReset', () => {
+      console.log('reset');
+    });
   }
 
   private toggleSettings(open?: boolean) {
@@ -67,13 +99,9 @@ export default class SettingsComponent {
     if (this.showSettings) {
       settingsPanel?.classList.add('show');
       setTimeout(() => this.inputs[0].focus(), 500);
-      this.timer?.stopTimer();
+      this.timer?.stopCountdown();
     } else {
       settingsPanel?.classList.remove('show');
-      const startStopButton = document.getElementById(
-        'StartStop'
-      ) as HTMLButtonElement;
-      startStopButton.focus();
     }
   }
 
@@ -98,7 +126,7 @@ export default class SettingsComponent {
   private onFormSubmit(event: SubmitEvent) {
     event.preventDefault();
 
-    this.timer.stopTimer();
+    this.timer?.stopCountdown();
 
     if (this.inputs.length === 3) {
       const hours = this.inputs[0].value;
@@ -113,11 +141,10 @@ export default class SettingsComponent {
       const countdownLength = [parseInt(hours),
         parseInt(minutes),
         parseInt(seconds)];
-
-      this.timer.setTimer(
+      
+      this.timer?.setCountdownLength(
         countdownLength,
-        hideZeroedUnits.checked,
-        cycleTheme.checked
+        hideZeroedUnits.checked
       );
 
       const currentSettings = {
@@ -132,9 +159,12 @@ export default class SettingsComponent {
       this.toggleSettings();
     }
   }
+
+  private onUpdateThemeColour(event: Event) {
+    this.setThemeColour(parseInt((event.target as HTMLInputElement).value));
+  }
   
-  private setThemeColour(event: Event) {
-    const colour = parseInt((event.target as HTMLInputElement).value);
+  private setThemeColour(colour: number) {
 
     if (!isNaN(colour)) {
       document.body.style.setProperty('--theme-hue-saturation', `${colour}, 71%`);
