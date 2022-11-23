@@ -76,19 +76,13 @@ body {
   margin: 0;
   overflow: hidden;
 
-  background-color: var(--primary-font-colour);
+  background-color: var(--theme-colour);
 
   color: var(--background-colour);
   line-height: 1.5;
   text-align: justify;
 
   accent-color: var(--theme-colour);
-
-  &.pulse {
-    main {
-      animation: pulse-animation 1s infinite;
-    }
-  }
 
   button {
     color: var(--background-colour);
@@ -213,6 +207,8 @@ main {
   justify-content: center;
   margin: $padding-standard;
   overflow: auto;
+
+  background-color: var(--theme-colour);
 }
 
 #Timer {

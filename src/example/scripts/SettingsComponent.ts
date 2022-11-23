@@ -58,6 +58,8 @@ export default class SettingsComponent {
     this.timer = document.querySelector('countdown-component') as CountdownComponent;
 
     this.timer.addEventListener('countdownStart', () => {
+      document.body.requestFullscreen();
+
       if (this.cycleThemeTimeout) {
         clearInterval(this.cycleThemeTimeout);
         this.cycleThemeTimeout = undefined;
@@ -78,11 +80,16 @@ export default class SettingsComponent {
     });
 
     this.timer.addEventListener('countdownEnd', () => {
-      confetti()?.then(this.timer?.reset);
+      confetti()?.then(() => {
+        this.timer?.setCountdownLength(
+          this.currentSettings.countdownLength || [0, 0, 0],
+          this.currentSettings.hideZeroedUnits
+        );
+      });
     });
 
     this.timer.addEventListener('countdownReset', () => {
-      console.log('reset');
+      document.exitFullscreen();
     });
   }
 
@@ -141,6 +148,9 @@ export default class SettingsComponent {
       const countdownLength = [parseInt(hours),
         parseInt(minutes),
         parseInt(seconds)];
+      const fullscreen = this.form.querySelector(
+        '[name="fullscreen"]'
+      ) as HTMLInputElement;
       
       this.timer?.setCountdownLength(
         countdownLength,
@@ -151,7 +161,8 @@ export default class SettingsComponent {
         ...this.currentSettings,
         countdownLength,
         hideZeroedUnits: hideZeroedUnits.checked,
-        cycleThemeColour: cycleTheme.checked
+        cycleThemeColour: cycleTheme.checked,
+        fullscreen: fullscreen.checked
       }
 
       this.saveSettings(currentSettings);
@@ -196,7 +207,8 @@ export default class SettingsComponent {
       countdownLength: JSON.parse(localStorage.getItem('countdownLength') || JSON.stringify(defaultSettings.countdownLength)),
       hideZeroedUnits: localStorage.getItem('hideZeroedUnits') !== 'false',
       themeColour: parseInt(localStorage.getItem('themeColour') || `${defaultSettings.themeColour}`),
-      cycleThemeColour: localStorage.getItem('cycleThemeColour') === 'false'
+      cycleThemeColour: localStorage.getItem('cycleThemeColour') === 'true',
+      fullscreen: localStorage.getItem('fullscreen') !== 'false'
     };
   }
 }
@@ -206,11 +218,13 @@ export type SettingsModel = {
   hideZeroedUnits?: boolean;
   themeColour?: number;
   cycleThemeColour?: boolean;
+  fullscreen?: boolean;
 }
 
 const defaultSettings: SettingsModel = {
   countdownLength: [0, 0, 0],
   hideZeroedUnits: true,
   themeColour: 260,
-  cycleThemeColour: false
+  cycleThemeColour: false,
+  fullscreen: true,
 }
