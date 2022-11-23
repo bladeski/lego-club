@@ -1,6 +1,6 @@
 {
   "name": "countdown-examples",
-  "version": "0.2.5",
+  "version": "0.2.8",
   "description": "Examples to compliment CountdownComponent.",
   "author": "Jonathan Blades",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "clean:dist": "rimraf dist",
     "clean:dist-serve": "rimraf dist-serve",
     "start": "npm run clean:dist-serve && parcel serve src/example/index.pug src/example/robots.txt --dist-dir dist-serve --port 1236",
-    "build": "npm run clean:dist && parcel build src/example/index.pug src/example/robots.txt --no-source-maps --public-url /countdown-timer-examples",
+    "build": "npm run clean:dist && parcel build src/example/index.pug src/example/robots.txt --no-source-maps --public-url /countdown-timer-example",
     "test": "jest"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
