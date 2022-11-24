@@ -42,10 +42,10 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@bladeski/countdown-timer@^1.0.0":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@bladeski/countdown-timer/-/countdown-timer-1.1.1.tgz#ea8eaa94313f620bd1d39eb0da46b796e938e3a9"
-  integrity sha512-nnwr0X0CVB3jXbNdcVatfHZ2lbQ4Q/GVYmX05Z/cX4p7jkoFd4MWMVy/C5EYwnDTX2LwOzgYQdr/JNM165/f6g==
+"@bladeski/countdown-timer@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@bladeski/countdown-timer/-/countdown-timer-2.1.0.tgz#a044dce8f91e263a34179e5f84d280cd7e1c077a"
+  integrity sha512-DDZTW17mfNVwGypx66eXfNb0//cN9DR++wrnbUTeo+zkYrkeI0ULxS1FdF6DFmKDQD+weYmO+IscI1kvG8ZrjA==
   dependencies:
     "@swc/helpers" "^0.4.14"
 
