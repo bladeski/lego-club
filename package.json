@@ -1,16 +1,16 @@
 {
-  "name": "countdown-examples",
-  "version": "0.2.9",
-  "description": "Examples to compliment CountdownComponent.",
+  "name": "lego-club",
+  "version": "0.0.1",
+  "description": "Page for lego club challenges.",
   "author": "Jonathan Blades",
   "license": "MIT",
-  "source": "src/example/index.pug",
+  "source": "src/index.pug",
   "type": "module",
   "scripts": {
     "clean:dist": "rimraf dist",
     "clean:dist-serve": "rimraf dist-serve",
-    "start": "npm run clean:dist-serve && parcel serve src/example/index.pug src/example/robots.txt --dist-dir dist-serve --port 1236",
-    "build": "npm run clean:dist && parcel build src/example/index.pug src/example/robots.txt --no-source-maps --public-url /countdown-timer-example",
+    "start": "npm run clean:dist-serve && parcel serve src/index.pug src/robots.txt --dist-dir dist-serve --port 1236",
+    "build": "npm run clean:dist && parcel build src/index.pug src/robots.txt --no-source-maps --public-url /lego-club",
     "test": "jest"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
@@ -25,6 +25,7 @@
   "dependencies": {
     "@bladeski/countdown-timer": "^2.1.0",
     "@types/canvas-confetti": "^1.4.3",
-    "canvas-confetti": "^1.6.0"
+    "canvas-confetti": "^1.6.0",
+    "moment": "^2.29.4"
   }
 }

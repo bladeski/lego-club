@@ -87,10 +87,6 @@ body {
   button {
     color: var(--background-colour);
   }
-
-  #Settings {
-    color: var(--primary-font-colour);
-  }
 }
 
 h1 {
@@ -209,6 +205,12 @@ main {
   overflow: auto;
 
   background-color: var(--theme-colour);
+}
+
+countdown-component {
+  &.hide {
+    display: none;
+  }
 }
 
 #Timer {
