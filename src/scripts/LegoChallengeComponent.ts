@@ -11,7 +11,7 @@ export default class LegoChallengeComponent {
   private cycleThemeTimeout?: number;
   private themeColour: number = 260;
   private currentChallenge: ChallengeModel = {
-    title: 'No Challenge',
+    title: 'No Challenge!',
     challengeText: 'Sorry, there are no challenges today!',
     length: [],
     date: ''
@@ -22,8 +22,8 @@ export default class LegoChallengeComponent {
     this.timer = document.querySelector('countdown-component') as CountdownComponent;
     this.currentChallenge = this.challenges.find(challenge => moment(challenge.date).isSame(new Date(), 'day')) || this.currentChallenge;
 
-    const titleEl = document.querySelector('span.challenge-title') as HTMLTitleElement;
-    const challengeTextEl = document.querySelector('span.challenge-text') as HTMLDivElement;
+    const titleEl = document.querySelector('.challenge-title') as HTMLTitleElement;
+    const challengeTextEl = document.querySelector('.challenge-text') as HTMLDivElement;
 
     if (titleEl) {
       titleEl.textContent = this.currentChallenge.title;
