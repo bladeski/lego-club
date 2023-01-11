@@ -14,8 +14,8 @@
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "devDependencies": {
-    "@parcel/transformer-pug": "2.8.2",
-    "@parcel/transformer-sass": "2.8.2",
+    "@parcel/transformer-pug": "^2.8.2",
+    "@parcel/transformer-sass": "^2.8.2",
     "parcel": "^2.8.2",
     "rimraf": "^3.0.2",
     "ts-loader": "^9.4.1",
