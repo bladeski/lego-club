@@ -42,10 +42,10 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@bladeski/countdown-timer@^2.1.0":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@bladeski/countdown-timer/-/countdown-timer-2.1.1.tgz#97f9a26c49efddef6e37660bf61fe5d4bc695a58"
-  integrity sha512-gnxtAKRliA9F8GE7O6ySqvRhWdV/nZRd/YOrotYcvqKzMEbqdTpluH8zHfZ6u49Fyq+vpUGxTm0wmQDNq+YY2A==
+"@bladeski/countdown-timer@^2.2.0":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@bladeski/countdown-timer/-/countdown-timer-2.2.1.tgz#b4ad61921ab4c863c18a18bf7d7ef9825e0f0510"
+  integrity sha512-WR70cfthe9qcysuDoorl23LzCGcJvL7z/fusgUHBDcZW8RochTLic1k+0DF4nIvQdb13EJsNwaz0hr3VsCYNyA==
   dependencies:
     "@swc/helpers" "^0.4.14"
 
@@ -653,7 +653,7 @@
     posthtml-render "^3.0.0"
     semver "^5.7.1"
 
-"@parcel/transformer-pug@2.8.2":
+"@parcel/transformer-pug@^2.8.2":
   version "2.8.2"
   resolved "https://registry.yarnpkg.com/@parcel/transformer-pug/-/transformer-pug-2.8.2.tgz#739e160dd7866b2149b71010837151abb581f221"
   integrity sha512-Lbkekxx7769bWqHiUJpi1OLSfDV8dcuftOYQFz3gnJ+ZLVfnjnO46Rbtd5FunN9dU2Gm5T9i9WQ53HxRH8XK9w==
@@ -677,7 +677,7 @@
     "@parcel/utils" "2.8.2"
     react-refresh "^0.9.0"
 
-"@parcel/transformer-sass@2.8.2":
+"@parcel/transformer-sass@^2.8.2":
   version "2.8.2"
   resolved "https://registry.yarnpkg.com/@parcel/transformer-sass/-/transformer-sass-2.8.2.tgz#c00e2ecb3f83801570c8631bce0efcef2e5a93cb"
   integrity sha512-GiTuLpkIIVjLUYM7kEWkGetQZSS6tSysokEvipSvST5LH3mXS7hV9d1kTE2DrvvN4SSgV1uougY7c4t1CexJZA==
