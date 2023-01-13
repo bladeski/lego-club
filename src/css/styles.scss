@@ -120,7 +120,16 @@ main {
     font-size: $font-size-xxl;
     text-align: center;
 
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+    visibility: hidden;
+
     gap: $padding-standard;
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
 
     .challenge-title {
       margin-right: $padding-large;
