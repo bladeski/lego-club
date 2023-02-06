@@ -55,12 +55,13 @@ body {
 html,
 body {
   height: 100%;
+
+  font-size: $body-font-size;
 }
 
 body {
   color: var(--primary-font-colour);
   font-family: $font-family;
-  font-size: $body-font-size;
   font-weight: 300;
 }
 
@@ -92,15 +93,16 @@ h3 {
 }
 
 h1 {
-  font-size: $font-size-xxxl;
+  font-size: $font-size-xxl;
+  text-align: center;
 }
 
 h2 {
-  font-size: $font-size-xxl;
+  font-size: $font-size-xl;
 }
 
 h3 {
-  font-size: $font-size-xl;
+  font-size: $font-size-l;
 }
 
 main {
@@ -117,7 +119,7 @@ main {
   gap: $padding-large;
 
   article {
-    font-size: $font-size-xxl;
+    font-size: $font-size-xl;
     text-align: center;
 
     opacity: 0;
@@ -150,5 +152,26 @@ countdown-component {
 
   main {
     padding: $padding-small $padding-page-width;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  html,
+  body {
+    font-size: $body-font-size + 2;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  html,
+  body {
+    font-size: $body-font-size + 4;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  html,
+  body {
+    font-size: $body-font-size + 6;
   }
 }

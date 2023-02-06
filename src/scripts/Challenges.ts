@@ -7,12 +7,18 @@ const Challenges: ChallengeModel[] = [
     date: '2023-01-14',
   },
   {
-    title: 'Going travelling...',
+    title: 'It must be love!',
     challengeText:
-      "With help from your grown-up, build somewhere that you would like to visit... even if it hasn't been discovered yet!",
+      'Build something to do with love. It could be someone or something you love, or that makes you think of love!',
     duration: [0, 45, 0],
     date: '2023-02-11',
   },
+  // {
+  //   title: 'Going travelling...',
+  //   challengeText: 'With help from your grown-up, build somewhere that you would like to visit... even if it hasn\'t been discovered yet!',
+  //   length: [0, 45, 0],
+  //   date: '2023-02-11'
+  // },
   {
     title: 'Creeping and Crawling',
     challengeText:
