@@ -1,6 +1,6 @@
 {
   "name": "lego-club",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Page for lego club challenges.",
   "author": "Jonathan Blades",
   "license": "MIT",
@@ -10,19 +10,30 @@
     "clean:dist": "rimraf dist",
     "clean:dist-serve": "rimraf dist-serve",
     "start": "npm run clean:dist-serve && parcel serve src/index.pug src/robots.txt --dist-dir dist-serve --port 1236",
-    "build": "npm run clean:dist && parcel build src/index.pug src/robots.txt --no-source-maps --public-url /lego-club"
+    "build": "npm run clean:dist && parcel build src/index.pug src/robots.txt --no-source-maps --public-url /lego-club",
+    "eslint": "eslint src/**/*.ts",
+    "eslint:fix": "eslint src/**/*.ts --fix",
+    "prettier": "prettier --check src/**/*.ts",
+    "prettier:write": "prettier --write src/**/*.ts",
+    "lint": "yarn prettier && yarn eslint",
+    "lint:write": "yarn eslint:fix && yarn prettier:write"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "devDependencies": {
-    "@parcel/transformer-pug": "2.8.2",
-    "@parcel/transformer-sass": "2.8.2",
+    "@parcel/transformer-pug": "^2.8.2",
+    "@parcel/transformer-sass": "^2.8.2",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "eslint": "^8.31.0",
+    "eslint-plugin-sort-class-members": "^1.16.0",
     "parcel": "^2.8.2",
+    "prettier": "^2.8.2",
     "rimraf": "^3.0.2",
     "ts-loader": "^9.4.1",
     "typescript": "^4.9.3"
   },
   "dependencies": {
-    "@bladeski/countdown-timer": "^2.1.0",
+    "@bladeski/countdown-timer": "^2.2.0",
     "@types/canvas-confetti": "^1.4.3",
     "canvas-confetti": "^1.6.0",
     "moment": "^2.29.4"

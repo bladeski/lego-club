@@ -1,9 +1,10 @@
 const Challenges: ChallengeModel[] = [
   {
     title: 'Feeling hungry?',
-    challengeText: 'With help from your grown-up, build some food (but don\'t eat it)!',
-    length: [0, 45, 0],
-    date: '2023-01-14'
+    challengeText:
+      "With help from your grown-up, build some food (but don't eat it)!",
+    duration: [0, 45, 0],
+    date: '2023-01-14',
   },
   {
     title: 'It must be love!',
@@ -19,17 +20,18 @@ const Challenges: ChallengeModel[] = [
   // },
   {
     title: 'Creeping and Crawling',
-    challengeText: 'With help from your grown-up, build a bug! It could be an insect, a spider, or something from your imagination!',
-    length: [0, 45, 0],
-    date: '2023-03-11'
+    challengeText:
+      'With help from your grown-up, build a bug! It could be an insect, a spider, or something from your imagination!',
+    duration: [0, 45, 0],
+    date: '2023-03-11',
   },
-]
+];
 
 export default Challenges;
 
 export type ChallengeModel = {
   title: string;
   challengeText: string;
-  length: number[];
-  date: string
-}
+  duration: number[];
+  date: string;
+};
