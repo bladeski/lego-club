@@ -8,9 +8,10 @@ const Challenges: ChallengeModel[] = [
   },
   {
     title: 'It must be love!',
-    challengeText: 'Build something to do with love. It could be someone or something you love, or that makes you think of love!',
-    length: [0, 45, 0],
-    date: '2023-02-11'
+    challengeText:
+      'Build something to do with love. It could be someone or something you love, or that makes you think of love!',
+    duration: [0, 45, 0],
+    date: '2023-02-11',
   },
   // {
   //   title: 'Going travelling...',
