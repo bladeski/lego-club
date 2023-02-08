@@ -16,7 +16,7 @@ export default class LegoChallengeComponent {
   };
 
   private cycleThemeTimeout?: number;
-  private themeColour = 260;
+  private themeColour = 205;
   private timer?: CountdownComponent;
 
   constructor() {
@@ -71,7 +71,7 @@ export default class LegoChallengeComponent {
   }
 
   private onCountdownStart() {
-    document.body
+    document.documentElement
       .requestFullscreen()
       .then(() => this.startTimer())
       .catch(() => this.startTimer());
@@ -107,8 +107,8 @@ export default class LegoChallengeComponent {
   private setThemeColour(colour: number) {
     if (!isNaN(colour)) {
       document.body.style.setProperty(
-        '--theme-hue-saturation',
-        `${colour}, 71%`,
+        '--theme-hue',
+        `${colour}`,
       );
       this.themeColour = colour;
     }

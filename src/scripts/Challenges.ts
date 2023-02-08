@@ -16,7 +16,7 @@ const Challenges: ChallengeModel[] = [
   // {
   //   title: 'Going travelling...',
   //   challengeText: 'With help from your grown-up, build somewhere that you would like to visit... even if it hasn\'t been discovered yet!',
-  //   length: [0, 45, 0],
+  //   duration: [0, 45, 0],
   //   date: '2023-02-11'
   // },
   {
