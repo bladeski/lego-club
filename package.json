@@ -20,8 +20,8 @@
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "devDependencies": {
-    "@parcel/transformer-pug": "^2.8.2",
-    "@parcel/transformer-sass": "^2.8.2",
+    "@parcel/transformer-pug": "2.8.3",
+    "@parcel/transformer-sass": "2.8.3",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
     "eslint": "^8.31.0",
