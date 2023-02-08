@@ -2,8 +2,10 @@ doctype html
 html(lang="en-GB")
   head
     include templates/head.pug
+  include templates/brick.pug
   main
-    h1 WELCOME TO CVC LEGO CLUB!
+    div.header
+      h1 WELCOME TO CVC LEGO CLUB!
     countdown-component(data-base-font-size="26").hide
     article.challenge
       span.challenge-title

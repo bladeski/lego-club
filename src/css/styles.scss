@@ -4,48 +4,59 @@
 @import './vars.scss';
 
 body {
-  --theme-hue-saturation: 230, 71%;
-  --theme-lightness: 24%;
+  --brick-scale: 0.6;
+  --theme-hue: 205;
+  --theme-saturation: 80%;
+  --theme-hue-saturation: var(--theme-hue), var(--theme-saturation);
+  --theme-lightness: 40%;
   --theme-colour: hsl(var(--theme-hue-saturation), var(--theme-lightness));
-  --primary-font-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 8%));
-  --link-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 20%));
-  --link-visited-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 10%));
-  --background-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 74%));
-  --secondary-background-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 70%));
-  --tooltip-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 16%));
+  --theme-accent: hsl(calc(var(--theme-hue) - 180), 90%, 60%);
+  --primary-font-colour: white;
+  --background-colour: hsl(var(--theme-hue), 15%, 7%);
+  --background-gradient: linear-gradient(150deg, var(--theme-accent) 0%, var(--theme-accent) calc(var(--brick-scale) * 250px),var(--background-colour) calc(var(--brick-scale) * 250px),var(--background-colour) 100%);
 
-  @media (prefers-color-scheme: dark) {
-    --theme-lightness: 76%;
-    --theme-colour: hsl(var(--theme-hue-saturation), var(--theme-lightness));
-    --primary-font-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 8%));
-    --link-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 20%));
-    --link-visited-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 10%));
-    --background-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 74%));
-    --secondary-background-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 70%));
-    --tooltip-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 16%));
+  // --theme-accent: hsl(calc(var(--theme-hue) + 300), var(--theme-saturation), var(--theme-lightness));
+  // --background-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 74%));
+  // --secondary-background-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 70%));
+  // --primary-font-colour: var(--background-colour);
+  // --link-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 20%));
+  // --link-visited-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 10%));
+  // --tooltip-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 16%));
 
-    &.light-mode {
-      --theme-lightness: 24%;
-      --theme-colour: hsl(var(--theme-hue-saturation), var(--theme-lightness));
-      --primary-font-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 8%));
-      --link-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 20%));
-      --link-visited-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 10%));
-      --background-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 74%));
-      --secondary-background-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 70%));
-      --tooltip-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 16%));
-    }
-  }
+  //   @media (prefers-color-scheme: dark) {
+  //     --theme-lightness: 76%;
+  //     --theme-colour: hsl(var(--theme-hue-saturation), var(--theme-lightness));
+  //     --background-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 74%));
+  //     --secondary-background-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 70%));
 
-  &.dark-mode {
-    --theme-lightness: 76%;
-    --theme-colour: hsl(var(--theme-hue-saturation), var(--theme-lightness));
-    --primary-font-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 8%));
-    --link-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 20%));
-    --link-visited-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 10%));
-    --background-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 74%));
-    --secondary-background-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 70%));
-    --tooltip-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 16%));
-  }
+  // // --primary-font-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 8%));
+  //     --link-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 20%));
+  //     --link-visited-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 10%));
+  //     --tooltip-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 16%));
+  //     &.light-mode {
+  //       --theme-lightness: 40%;
+  //       --background-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 74%));
+  //       --secondary-background-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 70%));
+  //       --theme-colour: hsl(var(--theme-hue-saturation), var(--theme-lightness));
+
+  // // --primary-font-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 8%));
+  //       --link-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 20%));
+  //       --link-visited-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 10%));
+  //       --tooltip-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 16%));
+  //     }
+  //   }
+
+  //   &.dark-mode {
+  //     --theme-lightness: 76%;
+  //     --theme-colour: hsl(var(--theme-hue-saturation), var(--theme-lightness));
+  //     --background-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 74%));
+  //     --secondary-background-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 70%));
+
+  // // --primary-font-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 8%));
+  //     --link-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 20%));
+  //     --link-visited-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) - 10%));
+  //     --tooltip-colour: hsl(var(--theme-hue-saturation), calc(var(--theme-lightness) + 16%));
+  //   }
 }
 
 * {
@@ -60,23 +71,20 @@ body {
 }
 
 body {
-  color: var(--primary-font-colour);
-  font-family: $font-family;
-  font-weight: 300;
-}
-
-body {
   display: flex;
   flex-direction: column;
   margin: 0;
   overflow: hidden;
 
-  background-color: var(--theme-colour);
+  background: var(--background-gradient);
+  background-color: var(--background-colour);
 
-  color: var(--background-colour);
+  color: var(--primary-font-colour);
+  font-family: $font-family;
+  font-weight: 300;
   line-height: 1.5;
 
-  accent-color: var(--theme-colour);
+  accent-color: var(--theme-accent);
 
   button {
     color: var(--background-colour);
@@ -107,14 +115,13 @@ h3 {
 
 main {
   display: flex;
+  position: relative;
   flex: 1 0 auto;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   margin: $padding-large 0;
   overflow: auto;
-
-  background-color: var(--theme-colour);
 
   gap: $padding-large;
 
@@ -147,6 +154,15 @@ countdown-component {
   }
 }
 
+@import './brick.scss';
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+
+  gap: $padding-standard;
+}
+
 @media screen and (min-width: 680px) {
   $padding-page-width: 10vw;
 
@@ -159,6 +175,8 @@ countdown-component {
   html,
   body {
     font-size: $body-font-size + 2;
+
+    --brick-scale: 1;
   }
 }
 
