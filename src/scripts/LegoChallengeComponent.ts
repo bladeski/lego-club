@@ -35,6 +35,8 @@ export default class LegoChallengeComponent {
       if (this.currentChallenge.duration.length) {
         this.timer.classList.remove('hide');
         this.timer.setCountdownLength(this.currentChallenge.duration, true);
+        const challenge = document.querySelector('article');
+        challenge?.classList.add('show');
       }
 
       this.timer.addEventListener('countdownStart', () =>
@@ -51,7 +53,6 @@ export default class LegoChallengeComponent {
       this.setChallengeText();
       const challenge = document.querySelector('article');
       challenge?.classList.add('show');
-      console.log('else');
     }
   }
 
@@ -63,11 +64,11 @@ export default class LegoChallengeComponent {
           true,
         );
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   }
 
   private onCountdownReset() {
-    document.exitFullscreen().catch((err) => console.log(err));
+    document.exitFullscreen().catch((err) => console.error(err));
   }
 
   private onCountdownStart() {
@@ -106,19 +107,12 @@ export default class LegoChallengeComponent {
 
   private setThemeColour(colour: number) {
     if (!isNaN(colour)) {
-      document.body.style.setProperty(
-        '--theme-hue',
-        `${colour}`,
-      );
+      document.body.style.setProperty('--theme-hue', `${colour}`);
       this.themeColour = colour;
     }
   }
 
   private startTimer() {
-    const challenge = document.querySelector('article');
-    challenge?.classList.add('show');
-    console.log('start');
-
     if (this.cycleThemeTimeout) {
       clearInterval(this.cycleThemeTimeout);
       this.cycleThemeTimeout = undefined;
