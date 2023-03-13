@@ -23,7 +23,7 @@
     "@parcel/transformer-pug": "2.8.3",
     "@parcel/transformer-sass": "2.8.3",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
-    "@typescript-eslint/parser": "^5.50.0",
+    "@typescript-eslint/parser": "^5.54.1",
     "eslint": "^8.35.0",
     "eslint-plugin-sort-class-members": "^1.16.0",
     "parcel": "^2.8.3",
