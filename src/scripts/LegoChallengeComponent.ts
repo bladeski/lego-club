@@ -32,9 +32,9 @@ export default class LegoChallengeComponent {
 
       this.setChallengeText();
 
-      if (this.currentChallenge.duration.length) {
+      if (this.currentChallenge.duration?.length) {
         this.timer.classList.remove('hide');
-        this.timer.setCountdownLength(this.currentChallenge.duration, true);
+        this.timer.setCountdownLength(this.currentChallenge.duration || [0, 45, 0], true);
         const challenge = document.querySelector('article');
         challenge?.classList.add('show');
       }

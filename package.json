@@ -33,7 +33,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@bladeski/countdown-timer": "^2.2.2",
+    "@bladeski/countdown-timer": "../countdown",
     "@types/canvas-confetti": "^1.4.3",
     "canvas-confetti": "^1.6.0",
     "moment": "^2.29.4"

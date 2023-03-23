@@ -24,7 +24,21 @@ const Challenges: ChallengeModel[] = [
     challengeText:
       'With help from your grown-up, build a bug! It could be an insect, a spider, or something from your imagination!',
     duration: [0, 45, 0],
-    date: '2023-03-11',
+    date: '2023-03-09',
+  },
+  {
+    title: 'Happy Easter',
+    challengeText:
+      'It\'s not a joke... next weekend is Easter! Build something that makes you think of this special holiday!',
+    duration: [0, 45, 0],
+    date: '2023-04-01',
+  },
+  {
+    title: 'Read All About It!',
+    challengeText:
+      'With help from your grown-up, build a scene from your favourite book, adding as much detail as you can!',
+    duration: [0, 45, 0],
+    date: '2023-04-29',
   },
 ];
 
@@ -33,6 +47,7 @@ export default Challenges;
 export type ChallengeModel = {
   title: string;
   challengeText: string;
-  duration: number[];
+  duration?: number[];
+  endTime?: string;
   date: string;
 };
