@@ -22,15 +22,15 @@
   "devDependencies": {
     "@parcel/transformer-pug": "2.8.3",
     "@parcel/transformer-sass": "2.8.3",
-    "@typescript-eslint/eslint-plugin": "^5.54.0",
-    "@typescript-eslint/parser": "^5.50.0",
-    "eslint": "^8.35.0",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "eslint": "^8.36.0",
     "eslint-plugin-sort-class-members": "^1.16.0",
     "parcel": "^2.8.3",
-    "prettier": "^2.8.4",
-    "rimraf": "^4.3.0",
+    "prettier": "^2.8.5",
+    "rimraf": "^4.4.0",
     "ts-loader": "^9.4.1",
-    "typescript": "^4.9.5"
+    "typescript": "^5.0.2"
   },
   "dependencies": {
     "@bladeski/countdown-timer": "^2.3.0",
