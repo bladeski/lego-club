@@ -29,7 +29,7 @@ const Challenges: ChallengeModel[] = [
   {
     title: 'Happy Easter',
     challengeText:
-      'It\'s not a joke... next weekend is Easter! Build something that makes you think of this special holiday!',
+      'It may be April fools day, but this is not a joke... next weekend is Easter! Build something that makes you think of this special holiday!',
     duration: [0, 45, 0],
     date: '2023-04-01',
   },
