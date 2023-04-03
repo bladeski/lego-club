@@ -30,7 +30,7 @@
     "prettier": "^2.8.7",
     "rimraf": "^4.4.1",
     "ts-loader": "^9.4.1",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.3"
   },
   "dependencies": {
     "@bladeski/countdown-timer": "^2.3.0",
